@@ -36,7 +36,7 @@ VB.NETのコードをC#に変換する際に参考となる変換例です。
 |4     | vbCrLf                               | \"r\n" もしくは Environment.NewLine            |             |              |
 
 
-### Format関数
+## Format関数
 
 Microsoft.VisualBasic アセンブリの参照がある環境では、クラス名修飾を付与するだけでVB.NETの動作を完全に維持できる。  
 
@@ -45,6 +45,28 @@ Microsoft.VisualBasic アセンブリの参照がある環境では、クラス�
 | Format                                     | Strings.Format                                |              |
 
 置換パターン : \bFormat\(([^,]+),\s*([^)]+)\) $\rightarrow$ Strings.Format($1, $2)
+
+## 型変換
+
+| VB.NET | C# |
+|---|---|
+| `CBool(x)` | `VBConversions.ToBoolean(x)` |
+| `CByte(x)` | `VBConversions.ToByte(x)` |
+| `CSByte(x)` | `VBConversions.ToSByte(x)` |
+| `CShort(x)` | `VBConversions.ToShort(x)` |
+| `CUShort(x)` | `VBConversions.ToUShort(x)` |
+| `CInt(x)` | `VBConversions.ToInteger(x)` |
+| `CUInt(x)` | `VBConversions.ToUInteger(x)` |
+| `CLng(x)` | `VBConversions.ToLong(x)` |
+| `CULng(x)` | `VBConversions.ToULong(x)` |
+| `CSng(x)` | `VBConversions.ToSingle(x)` |
+| `CDbl(x)` | `VBConversions.ToDouble(x)` |
+| `CDec(x)` | `VBConversions.ToDecimal(x)` |
+| `CChar(x)` | `VBConversions.ToChar(x)` |
+| `CDate(x)` | `VBConversions.ToDate(x)` |
+| `CStr(x)` | `VBConversions.ToString(x)` |
+| `CObj(x)` | `(object)x` |
+
 
 ## モジュール
 
