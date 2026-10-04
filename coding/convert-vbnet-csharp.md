@@ -6,22 +6,33 @@ VB.NETのコードをC#に変換する際に参考となる変換例です。
 
 ## Windows Forms
 
-|  No  | VB.NET                                     | C#                                            | 備考         |
-| ----:|:------------------------------------------ |:--------------------------------------------- | ------------ |
-|1     | MsgBox                                    |                                              |              |
+|  No  | VB.NET                                     | C#                            | 備考                                                    |
+| ----:|:------------------------------------------ |:----------------------------- | ------------------------------------------------------- |
+|1     | MsgBox                                     | MessageBox.Show               | MsgBoxはVB6の名残。VB.NETでも MessageBox.Show は使える  |
+
+
+## 数値のリテラル対応
+
+|  No  | 型             | VB.NETの例          | C#への変換例 |
+|------|----------------|---------------------|--------------|
+|1     | Double         | `1.2R` または `1.2` | `1.2d`       |
+|1     | Single (float) | `1.2F`              | `1.2f`       |
+|1     | Decimal        | `1.2D`              | `1.2m`       |
+
+参考URL : https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types
 
 ## 汎用
 
 |  No  | VB.NET                               | C#                                            | 置換パターン | 備考         |
-| ----:|:------------------------------------ |:--------------------------------------------- |:----------- |:------------ |
-|1     | IsDBNull                             | Convert.IsDBNull                              |             |              |
-|2     | Mid                                  | using Microsoft.VisualBasic;<br/>String.Mid   |             | ※1          |
-|3     | Chr                                  | using Microsoft.VisualBasic;<br/>String.Chr   |             | ※1          |
-|4     | DateAdd                              |                                               |             |              |
-|5     | DateDiff                             |                                               |             |              |
-|6     | IsDate                               |                                               |             |              |
-|7     | IsNumeric                            |                                               |             |              |
-|8     | Now                                  | DateTime.Now()                                |             |              |
+| ----:|:------------------------------------ |:--------------------------------------------- |:------------ |:------------ |
+|1     | IsDBNull                             | Convert.IsDBNull                              |              |              |
+|2     | Mid                                  | using Microsoft.VisualBasic;<br/>String.Mid   |              | ※1          |
+|3     | Chr                                  | using Microsoft.VisualBasic;<br/>String.Chr   |              | ※1          |
+|4     | DateAdd                              |                                               |              |              |
+|5     | DateDiff                             |                                               |              |              |
+|6     | IsDate                               |                                               |              |              |
+|7     | IsNumeric                            |                                               |              |              |
+|8     | Now                                  | DateTime.Now()                                |              |              |
 
 
 ※1 Microsoft.VisualBasic 互換アセンブリを利用
